@@ -24,17 +24,15 @@ def main():
         z = 0
         o = 0
         if key_lst[pg.K_UP]:
-            o=0 
-            z=-1
+            z-=1
         if key_lst[pg.K_DOWN]:
-            o=0
-            z=1
+            z+=1
         if key_lst[pg.K_RIGHT]:
-            o=1
-            z=0
+            o+=2
+        if key_lst[pg.K_LEFT]:
+            o-=2
         else:
-            o=-1
-            z=0
+            o-=1
         kk_rct.move_ip(o,z)
         x = tmr%3200
         screen.blit(bg_img, [-x, 0])
@@ -43,7 +41,7 @@ def main():
         screen.blit(kk_img,kk_rct)
         pg.display.update()
         tmr += 1        
-        clock.tick(200)
+        clock.tick(2000000)
 
 
 if __name__ == "__main__":
